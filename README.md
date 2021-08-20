@@ -7,3 +7,7 @@ Use blender_debug_log.cmd which can be found in your main Blender folder to debu
 - Make sure to look at **`blender_debug_output.txt`**, not **`blender_system_info.txt`** to prevent wasting time.
 
   The output file contains the crash logs while the other file contains other information that is unrelated to crashes.
+
+# Note
+
+Blender may **not** crash while you are running crash logs, as some exceptions alerts have been relatively disabled.
