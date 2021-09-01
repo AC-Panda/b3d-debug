@@ -1,13 +1,24 @@
 # Steps To Debug Blender 3D
 
-Use blender_debug_log.cmd which can be found in your main Blender folder to debug Blender crashes.
+Official Blender releases ship with `blender_debug_log.cmd` and can be found in the root folder of Blender
+UPBGE doesn't always ship with it so you may need to download the CMD script from this repository and manually place it inside your Blender's root folder
 
-- Run the cmd script, then click the **`enter`** key while hovering over the activated cmd window.
-- Blender should be run then, and when it crashes, your computer's file explorer should open a window containing a newly created folder with the debug prints.
-- Make sure to look at **`blender_debug_output.txt`**, not **`blender_system_info.txt`** to prevent wasting time.
+Once you are sure that you have the CMD script, complete these following steps to get crash logs:
+1. Run the CMD script (`blender_debug_log.cmd`) by clicking on it while it is in your root Blender folder
+2. Hover your mouse-cursor over the generated terminal window
+3. Once the terminal window is active, click the `Enter` key to confirm opening of Blender, and Blender should open like normal
+4. Attempt to make Blender crash again; and when it does, `File Explorer` should automatically open a new Explorer window that contains a newly generated folder containting the crash logs
+5. In the generated crash logs folder, view `blender_debug_output.txt` and not `blender_system_info.txt` to prevent wasting time
+6. Please understand that Blender may **NOT** crash while running it from the debug terminal, as some exception alerts have been disabled
 
-  The output file contains the crash logs while the other file contains other information that is unrelated to crashes.
-
-# Note
-
-Blender may **not** crash while you are running crash logs, as some exceptions alerts have been relatively disabled.
+# Additional Info For Debugging Exported BGE Projects
+7. Most likely after exporting a blend file as an executable, it's going to have a file-name other than 'Blender'
+So in the `blender_debug_log.cmd` script, rename the line:
+```
+"%~dp0\blender"
+```
+To
+```
+"%~dp0\YOUR_PROJECT_NAME
+```
+To than allow proper running of the CMD script
