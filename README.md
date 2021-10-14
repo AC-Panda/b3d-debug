@@ -19,6 +19,6 @@ So in the `blender_debug_log.cmd` script, rename the line:
 ```
 To
 ```
-"%~dp0\YOUR_PROJECT_NAME
+"%~dp0\PROJECT_NAME"
 ```
 To than allow proper running of the CMD script
