@@ -1,8 +1,14 @@
-# Steps To debug Blender 3D
+# How to debug a Blender 3D rash
 
-Official Blender releases ship with the `blender_debug_log.cmd` script and can be found in the root directory of your Blender folder.
+## Prerequisites
 
-Note: In recent UPBGE 0.2.x releases UPBGE doesn't always ship with it so you may need to download the CMD script from this repository and manually place it inside your Blender's root folder.
+You'll need the `blender_debug_log.cmd` script found in this Github repository.
+
+Double-check to see if your root Blender folder doesn't already have it to avoid an unnecessary download.
+
+**Note:** In recent UPBGE 0.2.x releases UPBGE was not shipped with CMD script and will need to be downloaded manually.
+
+## Instructions
 
 Once you're sure that you have the CMD script, complete these following steps to get crash logs:
 1. Run the CMD script (`blender_debug_log.cmd`) by clicking it while it's placed in your root Blender folder
