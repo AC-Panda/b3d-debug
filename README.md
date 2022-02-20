@@ -10,13 +10,12 @@ Double-check to see if your root Blender folder doesn't already have it to avoid
 
 ## Instructions
 
-1. Run the (`blender_debug_log.cmd`) CMD script by clicking it from your root Blender folder
-2. A `terminal window` should open once the script is clicked: `hover` your `mouse-cursor` over the generated terminal window
-3. Once the `terminal window` is `active`, push the `ENTER` key to confirm opening of Blender, and Blender should open normally
-4. Attempt to make Blender crash again; and when it does, `File Explorer` should automatically open a new Explorer window that contains a newly generated folder containting the crash logs
-5. In the generated crash logs folder, make sure to view `blender_debug_output.txt` and NOT `blender_system_info.txt` to prevent wasting time
-
-**SPECIAL MENTIONS:** Please understand that Blender may **NOT** crash while running it from the debug terminal, as some exception alerts have been disabled
+1. Run the (`blender_debug_log.cmd`) CMD script by clicking it from your root Blender folder.
+2. A `terminal window` should open once the script is clicked: `hover` your `mouse-cursor` over the generated terminal window.
+3. Once the `terminal window` is `active`, push the `ENTER` key to confirm opening of Blender, and Blender should open normally.
+4. Attempt to make Blender crash again; and when it does, `File Explorer` should automatically open a new Explorer window that contains a newly generated folder containting the crash logs.
+5. In the generated crash logs folder, make sure to view `blender_debug_output.txt` and NOT `blender_system_info.txt` to prevent wasting time.
+<br>**SPECIAL MENTIONS:** Please understand that Blender may **NOT** crash while running it from the debug terminal, as some exception alerts have been disabled.
 
 # How to debug a exported BGE runtime
 
