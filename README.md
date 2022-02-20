@@ -1,4 +1,4 @@
-# How to debug a Blender 3D rash
+# How to debug a Blender 3D or BGE crash
 
 ## Prerequisites
 
@@ -18,14 +18,19 @@ Double-check to see if your root Blender folder doesn't already have it to avoid
 
 **SPECIAL MENTIONS:** Please understand that Blender may **NOT** crash while running it from the debug terminal, as some exception alerts have been disabled
 
-# Additional info for debugging exported BGE projects
-7. Most likely after exporting a blend file as an executable, it's going to have a file-name other than 'Blender'
-So in the `blender_debug_log.cmd` script, rename the line:
+# How to debug a exported BGE runtime
+
+Most likely after exporting a blend file as a runtime, it's going to have a file-name other than 'Blender.exe`.
+e.g. Game.exe
+
+So you'll need to tweak the CMD script to regonize your runtime in order to launch/debug it.
+
+In your `blender_debug_log.cmd` CMD script, rename the line:
 ```
 "%~dp0\blender"
 ```
-To
+to
 ```
-"%~dp0\PROJECT_NAME"
+"%~dp0\%PROJECT_NAME%"
 ```
-To allow the CMD script to regonize the desired runtime.
+`%PROJECT_NAME%` should be the name of your exported runtime's file-name.
