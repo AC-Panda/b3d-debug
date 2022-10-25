@@ -1,42 +1,25 @@
-## How to debug a Blender3D (or BGE/UPBGE) when it crashes
+# Guide to debugging Blender/BGE/UPBGE crashes 
 
 ### Prerequisites
 
 * `blender_debug_log.cmd`
-* Windows OS (feel free to convert the script for your operating-system)
+* Windows OS (feel free to convert the script for your OS)
 
-Blender 2.8+ usually ships with it, so no need to download it if you already have the script locally. You can double-check if you have it by searching in your root `Blender` folder. If your Blender/UPBGE folder doesn't have this script, you can download it from this Github repository.
+**NOTE:** Blender 2.8+ versions usually ships with the script, so no need to download it if you already have the script locally. You can double-check if you have it already by searching in your root _Blender_ folder. If your Blender/UPBGE folder doesn't have this script, you can download it from this repository.
 
-### Instructions
+### How to generate crashlogs - Blender/BGE/UPBGE
 
-1. Place `blender_debug_log.cmd` in your root Blender if it already isn't there.
-2. Run the (`blender_debug_log.cmd`) CMD script by clicking it.
-3. A `terminal` window should open, once so `hover` your `mouse-cursor` over the generated terminal window.
-4. Once the `terminal` window is `active` or `in focus`, push the `ENTER` key to confirm opening of Blender and Blender should open normally.
-5. Attempt to make Blender crash again; and when it does, `File Explorer` should automatically open a new Explorer window containing a new `TEMP` folder containting the generated crash logs.
-6. In the new crash logs folder, make sure to view `blender_debug_output.txt` and not `blender_system_info.txt` to prevent wasting time your time.
-<br>**NOTE:** Please be aware that Blender may **NOT** crash while running the debug terminal is open, as some exception alerts have been disabled.
+1. Place `blender_debug_log.cmd` in your root Blender (if it isn't already there).
+2. Run `blender_debug_log.cmd` by clicking it.
+3. A _terminal_ window should open - once so, hover your _cursor_ over the generated terminal window.
+4. Once the _terminal_ window is active or in focus, push the _ENTER_ key to confirm the opening of Blender - Blender should open normally then.
+5. Attempt to make Blender crash again; when it does, _File Explorer_ should automatically open a new _Explorer_ window containing a new _TEMP_ folder, which should contain the newly generated crashlogs.
+6. In the crashlogs folder, make sure to view `blender_debug_output.txt` and not `blender_system_info.txt` to prevent wasting time.
+<br>**NOTE:** Please be aware that Blender may _NOT_ crash while the debug terminal is still open, as most exception alerts have been automatically disabled.
 
-## How to debug a exported BGE/UPBGE runtime
+## How to generate crashlogs - Exported Runtime
 
-0. If your exported runtime has a file name other than `Blender` or `blender` e.g.:
+1. If your exported runtime has a filename other than _Blender_ or _blender_, for example `Game.exe`, you'll need to tweak the script to recognize your runtime in order for the script to properly launch and debug your runtime.
 
-```
-Game.exe
-```
-
-You'll need to tweak the CMD script to recognize your runtime in order to launch and debug it.
-
-1. Edit your `blender_debug_log.cmd` CMD script and rename the line:
-
-```
-"%~dp0\blender"
-```
-
-to
-
-```
-"%~dp0\%PROJECT_NAME%"
-```
-
-`%PROJECT_NAME%` should be the file name of your exported runtime such as `Game`.<br />No need to add your executable's extension type (exe, app, elf, etc).
+2. To edit the script to fit your renamed runtime, open your script in a text editor and rename: `"%~dp0\blender"` to `"%~dp0\%PROJECT_NAME%"`.
+<br />**NOTE:** `%PROJECT_NAME%` should be the filename of your runtime such as `Game`. No need to add your runtime's extension type (exe, app, elf, etc.), that's automatically detected.
